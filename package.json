@@ -13,18 +13,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/devmark/ngx-slick"
+    "url": "https://github.com/Thenis/ngx-slick"
   },
   "author": {
-    "name": "Mark",
-    "email": "hc.devmark@gmail.com"
+    "name": "Denis",
+    "email": "d.stoilov96@gmail.com"
   },
   "keywords": [
     "angular"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/devmark/ngx-slick/issues"
+    "url": "https://github.com/Thenis/ngx-slick/issues"
   },
   "devDependencies": {
     "@angular/common": "^4.0.0",
