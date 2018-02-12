@@ -2,7 +2,7 @@ import {
     Component, Input, Output, EventEmitter, NgZone, forwardRef, AfterViewInit,
     OnDestroy, Directive, ElementRef, Host
 } from '@angular/core';
-import {NG_VALUE_ACCESSOR} from '@angular/forms';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 declare var $: any;
 
@@ -61,36 +61,39 @@ export class SlickComponent implements AfterViewInit, OnDestroy {
         const self = this;
 
         this.zone.runOutsideAngular(() => {
-            this.$instance = $(this.el.nativeElement).slick(this.config);
-            this.initialized = true;
+            this.$instance = $(this.el.nativeElement);
 
-            this.$instance.on('init', (slick) => {
+            this.$instance.on('init', (event, slick) => {
                 self.zone.run(() => {
-                    self.init.emit({slick});
+                    self.init.emit({ event, slick });
                 });
             });
 
+            this.$instance.slick(this.config);
+
+            this.initialized = true; this.initialized = true;
+
             this.$instance.on('afterChange', (event, slick, currentSlide) => {
                 self.zone.run(() => {
-                    self.afterChange.emit({event, slick, currentSlide});
+                    self.afterChange.emit({ event, slick, currentSlide });
                 });
             });
 
             this.$instance.on('beforeChange', (event, slick, currentSlide, nextSlide) => {
                 self.zone.run(() => {
-                    self.beforeChange.emit({event, slick, currentSlide, nextSlide});
+                    self.beforeChange.emit({ event, slick, currentSlide, nextSlide });
                 });
             });
 
             this.$instance.on('breakpoint', (event, slick, breakpoint) => {
                 self.zone.run(() => {
-                    self.breakpoint.emit({event, slick, breakpoint});
+                    self.breakpoint.emit({ event, slick, breakpoint });
                 });
             });
 
             this.$instance.on('destroy', (event, slick) => {
                 self.zone.run(() => {
-                    self.destroy.emit({event, slick});
+                    self.destroy.emit({ event, slick });
                 });
             });
         });
