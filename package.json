@@ -13,18 +13,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Thenis/ngx-slick"
+    "url": "https://github.com/pizzetto/ngx-slick"
   },
   "author": {
-    "name": "Denis",
-    "email": "d.stoilov96@gmail.com"
+    "name": "Pizzetto"
   },
   "keywords": [
     "angular"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Thenis/ngx-slick/issues"
+    "url": "https://github.com/pizzetto/ngx-slick/issues"
   },
   "devDependencies": {
     "@angular/common": "^4.0.0",
